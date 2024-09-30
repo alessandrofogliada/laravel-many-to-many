@@ -1,4 +1,3 @@
-
 <?php
 
 namespace Database\Seeders;
@@ -23,5 +22,3 @@ class TechnologyPostSeeder extends Seeder
         }
     }
 }
-
-
