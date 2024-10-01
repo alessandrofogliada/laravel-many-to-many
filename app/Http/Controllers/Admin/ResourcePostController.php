@@ -47,9 +47,7 @@ class ResourcePostController extends Controller
 
         $categories = Category::all();
 
-        
-
-
+        $newPost->attach($data['technologies']);
 
         // $newPost->title = $data['title'];
         // $newPost->slug = Helper::generateSlug($data['title'] , Post::class);
@@ -77,8 +75,11 @@ class ResourcePostController extends Controller
 
         $categories = Category::all();
 
+        $technologies = Technology::all();
 
-        return view('admin.posts.edit' , compact('post' , 'categories'));   
+
+
+        return view('admin.posts.edit' , compact('post' , 'categories' , 'technologies' ));   
     }
 
     /**
