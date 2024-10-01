@@ -16,7 +16,17 @@
           <strong>Tempo di lettura:</strong>{{$post->reading_time}}
           <br>
           <strong class="badge bg-primary">Categoria: {{$post->category->name}}</strong>
-      </div>
+          <br>
+          <ul>
+            <strong>Tecnologie</strong>
+            @foreach ($post->technologies as $technology)
+            <li class="badge bg-success">
+              {{$technology->name}}
+            </li>
+            @endforeach
+          
+          </ul>
+        </div>
     </div>
 </div>
 

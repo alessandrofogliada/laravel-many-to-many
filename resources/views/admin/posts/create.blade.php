@@ -27,6 +27,18 @@
             <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
         </select>
+
+        <h5>Seleziona le tecnologie:</h5>
+        @foreach ($technologies as $technology)
+        <div class="input-group-text">
+            <input id="technology-{{$technology->id}}" class="form-check-input mt-0" type="checkbox" value="{{$technology->id}}" aria-label="Checkbox for following text input">
+            <label class="form-check-label" for="accessory-{{$technology->id}}">
+                {{$technology->name}}
+            </label>
+          </div>
+        @endforeach
+       
+          
         
 
         <input type="submit" value="Invia">

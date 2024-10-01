@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('technology_post', function (Blueprint $table) {
+        Schema::create('post_technology', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tecnology_id');
-            $table->foreign('tecnology_id')
+            $table->unsignedBigInteger('technology_id');
+            $table->foreign('technology_id')
                 ->references('id')
                 ->on('technologies')
                 ->onDelte('cascade');

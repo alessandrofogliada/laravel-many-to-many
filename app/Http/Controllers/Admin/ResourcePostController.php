@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Functions\Helper;
 use App\Models\Category;
+use App\Models\Technology;
 
 
 class ResourcePostController extends Controller
@@ -28,7 +29,9 @@ class ResourcePostController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.posts.create' , compact('categories'));
+        $technologies = Technology::all();
+
+        return view('admin.posts.create' , compact('categories' , 'technologies'));
     }
 
     /**
@@ -43,6 +46,10 @@ class ResourcePostController extends Controller
         $newPost->save();
 
         $categories = Category::all();
+
+        
+
+
 
         // $newPost->title = $data['title'];
         // $newPost->slug = Helper::generateSlug($data['title'] , Post::class);
@@ -69,6 +76,7 @@ class ResourcePostController extends Controller
     {
 
         $categories = Category::all();
+
 
         return view('admin.posts.edit' , compact('post' , 'categories'));   
     }
